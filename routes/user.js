@@ -2,9 +2,14 @@ const express = require('express')
 const router = express.Router()
 const User = require('../models/user')
 
+router.post('/users', function (req, res) {
+    console.log(req.body);
+    res.status(200).send(req.body);
+});
+
 /** Route to get all users. */
-// GET localhost:3000/users/
-router.get('/', (req, res) => {
+
+router.get('/user', (req, res) => {
     User.find().then((users) => {
         return res.json({users})
     })
@@ -14,7 +19,7 @@ router.get('/', (req, res) => {
 })
 
 /** Route to get one user by id. */
-// GET localhost:3000/users/:userId
+
 router.get('/:userId', (req, res) => {
     User.findOne({_id: req.params.userId})
     .then(result => {
@@ -25,8 +30,8 @@ router.get('/:userId', (req, res) => {
 })
 
 /** Route to add a new user to the database. */
-router.post('/', (req, res) => {
-    // POST localhost:3000/users/
+router.post('/user/new', (req, res) => {
+    
     let user = new User(req.body)
     user.save().then(userResult => {
         return res.json({user: userResult})
@@ -36,7 +41,6 @@ router.post('/', (req, res) => {
 })
 
 /** Route to update an existing user. */
-// PUT localhost:3000/users/:userId
 router.put('/:userId', (req, res) => {
     User.findByIdAndUpdate(req.params.userId, req.body).then(() => {
         return User.findOne({_id: req.params.userId})
@@ -48,7 +52,6 @@ router.put('/:userId', (req, res) => {
 })
 
 /** Route to delete a user. */
-// DELETE localhost:3000/users/:userId
 router.delete('/:userId', (req, res) => {
     User.findByIdAndDelete(req.params.userId).then((result) => {
         if (result === null) {

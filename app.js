@@ -26,13 +26,10 @@ app.set('view engine', 'handlebars');
 
 app.get("/", (req,res)=> {
     console.log("root route")
-    res.send("sjkdfhlksjhf")
+    res.send("")
 })
 
-app.get("/users", (req,res) => {
-    var user = {firstName: "Anika", lastName: "Morris"}
-    res.json(user)
-})
+
 
 
 app.listen(3003,() =>{
