@@ -2,7 +2,8 @@
 const mongoose = require("mongoose");
 assert = require("assert");
 
-const url = "mongodb://localhost/gg-db";
+
+const url = process.env.MONGODB_URI || "mongodb://localhost/gg-db";
 mongoose.Promise = global.Promise;
 mongoose.connect(
   url,
