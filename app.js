@@ -30,11 +30,9 @@ app.engine('handlebars', exphbs({ defaultLayout: 'main' }));
 app.set('view engine', 'handlebars');
 
 
-app.get("/", (req,res)=> {
-    console.log("root route")
-    res.send("")
-})
-
+app.get('/', function (req, res) {
+    res.send('Welcome to Greengear serverless API')
+  })
 
 
 

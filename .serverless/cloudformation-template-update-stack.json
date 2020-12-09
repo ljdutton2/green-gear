@@ -167,7 +167,7 @@
           "S3Bucket": {
             "Ref": "ServerlessDeploymentBucket"
           },
-          "S3Key": "serverless/greenGear/dev/1607473316323-2020-12-09T00:21:56.323Z/greenGear.zip"
+          "S3Key": "serverless/greenGear/dev/1607484250682-2020-12-09T03:24:10.682Z/greenGear.zip"
         },
         "Handler": "app.handler",
         "Runtime": "nodejs12.x",
@@ -185,14 +185,14 @@
         "AppLogGroup"
       ]
     },
-    "AppLambdaVersionxN3grGTuI4tmM4AoO4l6traUDOH2KbuJqnTWDvebDGY": {
+    "AppLambdaVersionY87CRpEbsPu9Os8NJNZz8XOIceg7yHW6zUgJdZEmDI": {
       "Type": "AWS::Lambda::Version",
       "DeletionPolicy": "Retain",
       "Properties": {
         "FunctionName": {
           "Ref": "AppLambdaFunction"
         },
-        "CodeSha256": "QbF5lnC6cujKCjhdFccFnsfpQb/QH8cwabqvdqlw3kI="
+        "CodeSha256": "unfMPwObqD/Fysz/fLhJpm//+kh7fhZ1pKOHP4ML9PY="
       }
     },
     "CreateUserLambdaFunction": {
@@ -202,7 +202,7 @@
           "S3Bucket": {
             "Ref": "ServerlessDeploymentBucket"
           },
-          "S3Key": "serverless/greenGear/dev/1607473316323-2020-12-09T00:21:56.323Z/greenGear.zip"
+          "S3Key": "serverless/greenGear/dev/1607484250682-2020-12-09T03:24:10.682Z/greenGear.zip"
         },
         "Handler": "index.handler",
         "Runtime": "nodejs12.x",
@@ -220,14 +220,14 @@
         "CreateUserLogGroup"
       ]
     },
-    "CreateUserLambdaVersionoRutnLuvi1z0GSAm1kkJ5E8SGPKn9vWuvMIUK9PUSo": {
+    "CreateUserLambdaVersionba8epGXqyeMHUKeKXb1ozul8ogHHBZRvzxPJUUbYNP4": {
       "Type": "AWS::Lambda::Version",
       "DeletionPolicy": "Retain",
       "Properties": {
         "FunctionName": {
           "Ref": "CreateUserLambdaFunction"
         },
-        "CodeSha256": "QbF5lnC6cujKCjhdFccFnsfpQb/QH8cwabqvdqlw3kI="
+        "CodeSha256": "unfMPwObqD/Fysz/fLhJpm//+kh7fhZ1pKOHP4ML9PY="
       }
     },
     "ApiGatewayRestApi": {
@@ -416,7 +416,7 @@
         "MethodResponses": []
       }
     },
-    "ApiGatewayDeployment1607473309510": {
+    "ApiGatewayDeployment1607484244092": {
       "Type": "AWS::ApiGateway::Deployment",
       "Properties": {
         "RestApiId": {
@@ -514,13 +514,13 @@
     "AppLambdaFunctionQualifiedArn": {
       "Description": "Current Lambda function version",
       "Value": {
-        "Ref": "AppLambdaVersionxN3grGTuI4tmM4AoO4l6traUDOH2KbuJqnTWDvebDGY"
+        "Ref": "AppLambdaVersionY87CRpEbsPu9Os8NJNZz8XOIceg7yHW6zUgJdZEmDI"
       }
     },
     "CreateUserLambdaFunctionQualifiedArn": {
       "Description": "Current Lambda function version",
       "Value": {
-        "Ref": "CreateUserLambdaVersionoRutnLuvi1z0GSAm1kkJ5E8SGPKn9vWuvMIUK9PUSo"
+        "Ref": "CreateUserLambdaVersionba8epGXqyeMHUKeKXb1ozul8ogHHBZRvzxPJUUbYNP4"
       }
     },
     "ServiceEndpoint": {
