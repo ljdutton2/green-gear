@@ -1,5 +1,7 @@
+const serverless = require('serverless-http');
 const express = require('express')
 const app = express()
+const AWS = require('aws-sdk');
 var cookieParser = require('cookie-parser');
 app.use(cookieParser()); // Add this after you initialize express.
 
@@ -7,6 +9,10 @@ app.use(cookieParser()); // Add this after you initialize express.
 const exphbs = require('express-handlebars');
 const bodyParser = require('body-parser');
 const expressValidator = require('express-validator');
+
+
+const USERS_TABLE = process.env.USERS_TABLE;
+const dynamoDb = new AWS.DynamoDB.DocumentClient();
 
 // Set db
 require('./data/greenGear-db');
@@ -35,3 +41,5 @@ app.get("/", (req,res)=> {
 app.listen(3003,() =>{
     console.log("server is running on port 3003")
 })
+
+module.exports.handler = serverless(app);
